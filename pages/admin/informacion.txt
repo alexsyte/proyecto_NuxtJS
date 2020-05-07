@@ -1,0 +1,2 @@
+Usuario administrador: usuario@info.com 
+Contraseña administrador: usuario
