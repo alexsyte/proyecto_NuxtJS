@@ -1,15 +1,6 @@
+<!--Ésta es la página de inicio de nuestra aplicación, podemos ver más información del creador, tanto como ir a la documentación de la tecnología-->
 <template>
   <div>
-    <!--Posicionamos al final de la barra-->
-    <div class="navbar-end">
-      <!--Posicionamos un item, que en nuestro caso es un botón-->
-      <div class="navbar-item">
-        <div class="buttons">
-          <a href="/login" class="button is-light"> Log in</a>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       <div>
       <logo/>
@@ -17,14 +8,10 @@
         ¡Estás de vuelta!
       </h1>
       <h2 class="subtitle">
-        Aplicación de gestión de objetos realizado por Alexandra Collinge de 2ºDAM
+        Proyecto Investigación - Alexandra Collinge de 2ºDAM
       </h2>
       <div class="links">
-        <a href="/lista" class="button--green">
-          Contenido
-        </a>
-        <br><br>
-        <a href="https://github.com/nuxt/docs" target="_blank" class="button--grey">
+        <a href="https://github.com/nuxt/docs" target="_blank" class="button--green">
           Documentación
         </a>
         <a href="https://github.com/alexsyte" target="_blank" class="button--grey">
@@ -41,14 +28,13 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
-import { db } from '~/plugins/firebase'
 
 export default {
   components: {
     Logo
   },
   created() {
-    console.log(db)
+
   }
 }
 </script>

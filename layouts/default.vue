@@ -1,18 +1,28 @@
 <template>
-  <div>
-    <Header/>
-    <nuxt/>
-  </div>
+    <div class="app-container">
+
+        <TheHeader/>
+        
+        <div class="app-content">
+            <nuxt />
+        </div>
+        
+    </div>
 </template>
 
 <script>
-import Header from "~/layouts/header"
 
-export default {
-  components: {
-    Header
-  }
-}
+    import TheHeader from '~/layouts/TheHeader'
+    import TheSideNav from '~/layouts/TheSideNav'
+
+    export default {
+
+        components: {
+            TheHeader
+        }
+
+    }
+
 </script>
 
 <style>

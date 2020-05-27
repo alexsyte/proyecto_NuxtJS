@@ -1,2 +1,5 @@
-Usuario administrador: usuario@info.com 
+Usuario administrador: profesores@info.com
 Contraseña administrador: usuario
+
+Usuario foro: profesores@info.com
+Contraseña foro: usuario

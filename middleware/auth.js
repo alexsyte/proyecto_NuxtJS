@@ -6,11 +6,11 @@ import { firebase } from '~/plugins/firebase'
 export default function({ redirect }) {
   firebase.auth().onAuthStateChanged(function(user) {
     if (!user) {
-      return redirect('/login')
+      return redirect('/')
     } else {
       console.log(user)
     }
   })
 }
 
-// Este middleware se utilizará en las páginas de administrador
+// Este middleware se utilizará en las páginas de admin y en el foro

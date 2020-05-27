@@ -1,11 +1,12 @@
+import { db } from './plugins/firebase'
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Animal Crossing'/*process.env.npm_package_name || ''*/,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -33,7 +34,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
   ],
   /*
   ** Nuxt.js modules
@@ -44,10 +45,58 @@ export default {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
+    }
+  },
+  generate: {
+    async routes () {
+      let routesList = []
+      try {
+        const data = await db.collection('lista').get()
+        const docs = await data.docs
+        docs.map(doc => {
+          const category = '/category'
+          routesList.push(category)
+          const route1 = '/category' + '/' + doc.data().tipo
+          routesList.push(route1)
+        })
+        const data2 = await db.collection('texto').get()
+        const docs2 = await data2.docs
+        docs2.map(doc => {
+          const titulo = '/titulo'
+          routesList.push(titulo)
+          const route2 = '/titulo' + '/' + doc.data().id
+          routesList.push(route2)
+        })
+        const data3 = await db.collection('post').get()
+        const docs3 = await data3.docs
+        docs3.map(doc => {
+          const route6 = '/categoryForum'
+          routesList.push(route6)
+          const route3 = '/categoryForum' + '/' + doc.data().tipo
+          routesList.push(route3)
+          const route7 = '/nuevaPregunta'
+          routesList.push(route7)
+          const route4 = '/nuevaPregunta' + '/' + doc.data().tipo
+          routesList.push(route4)
+          const route8 = '/pregunta'
+          routesList.push(route8)
+          const route5 = '/pregunta' + '/' + doc.data().id
+          routesList.push(route5)
+        })
+        return routesList
+      } catch (error) {
+        console.log("ERROR A LA HORA DE GENERAR PROYECTO: "+error)
+        return []
+      }
     }
   }
+  
 }

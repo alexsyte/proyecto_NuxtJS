@@ -1,12 +1,13 @@
+<!--Ésta página nos filtra por el tipo de animal que hayamos hecho click, pudiendo elegir entre bichos y peces-->
 <template>
-<div>
+<div class="bg-img">
+  <audio class="musica" :src="require('@/static/intro-acnh.mp3')" controls></audio>
   <div class="container">
     <section class="section">
-      <h1 class="title is-1">{{ $route.params.tipo }}</h1>
       <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
           <li>
-            <nuxt-link to="/lista">
+            <nuxt-link to="/lista" class="link_home">
               Home
             </nuxt-link>
           </li>
@@ -15,6 +16,7 @@
           </li>
         </ul>
       </nav>
+      <h1 class="title is-1">{{ $route.params.tipo }}</h1>
       <div class="container">
         <section class="section">
           <div class="columns is-multiline">
@@ -62,7 +64,7 @@ export default {
       // Todos los documentos que estén dentro de este where
       .where('tipo', '==', this.$route.params.tipo)
       .get()
-      // Devuelve una promesa que mediante querySnapshot asignaremos a nuestro array de restaurantes
+      // Devuelve una promesa que mediante querySnapshot asignaremos a nuestro array de animales
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           this.animales.push(doc.data())
@@ -80,6 +82,7 @@ export default {
         // Este método nos permite cambiar en pantalla y modificar en nuestra base de datos si tenemos capturado un bicho o no
         cambiar(animal){
             if(animal.capturado=="No"){
+              console.log(db.collection('lista').doc(animal.id))
                 this.ref = db.collection('lista').doc(animal.id)
                 const response = this.ref.get()
                 response.then(doc => {
@@ -103,13 +106,25 @@ export default {
                     }
                 })
             }
-        }
-  }
+        },
+  },
+  
 }
 </script>
 <style>
 .animal-card {
-  margin: 10px 20px;
+  margin: 10px;
   min-width: 300px;
+}
+.link_home{
+  margin-left: 25px;
+}
+.bg-img {
+  background-image: url(~@/static/956578.jpg);
+  background-size:cover;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
+  background-color: #999;
 }
 </style>
