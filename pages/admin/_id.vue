@@ -134,7 +134,6 @@
                 <select v-model="texto.tipo">
                     <option value="noticia" selected>noticia</option>
                     <option value="guía">guía</option>
-                    <option value="foro">foro</option>
                   </select>
               </div>
             </div>
