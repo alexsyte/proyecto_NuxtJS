@@ -21,9 +21,9 @@
 
 <script>
     import AppLinks from '~/components/appLinks'
-export default {
-    components: { AppLinks }
-}
+    export default {
+        components: { AppLinks }
+    }
 </script>
 
 <style scoped>

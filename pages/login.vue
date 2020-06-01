@@ -21,12 +21,17 @@
       </div>
       <div class="columns">
         <div class="column has-text-centered">
+          <nuxt-link to="/" class="button is-danger">
+            Cancelar
+          </nuxt-link>
+          <button @click="onLogin" class="button is-primary">
+            Login
+          </button>
           <button @click="signIn" class="button is-primary">
             Sign In
           </button>
-          <nuxt-link to="/" class="button is-danger">Cancelar</nuxt-link>
-          <button @click="onLogin" class="button is-primary">
-            Login
+          <button @click="passwordForgot" class="button is-danger">
+            ¿Olvidó la contraseña?
           </button>
         </div>
       </div>
@@ -69,7 +74,28 @@ export default {
       .catch(()=>{
         alert("La cuenta ya existe");
        });
+    },
+    passwordForgot(){
+      // Ponemos un alert, con el cual recogeremos lo que escriba el usuario
+      var respuesta = prompt("¡Porfavor escriba su e-mail!", "");
+
+      // Si es nulo, se lo decimos al usuario
+      if (respuesta == null || respuesta == "") {
+        txt = "No ha escrito nada.";
+      } else {
+        // Si no es nulo o vacío, miramos si está en firebase ese email y le envíamos un correo para cambiar la contraseña
+        firebase.auth().sendPasswordResetEmail(respuesta)
+        .then(function() {
+          alert('Se ha enviado un correo con una nueva contraseña.');
+        })
+        // Si no está en firebase ese correo registrado, lo notificamos
+        .catch(function(error) {
+          alert('El correo no se encuentra registrado en el foro.');
+        });
+      } 
+      
     }
+
   }
 }
 </script>

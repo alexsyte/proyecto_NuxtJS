@@ -73,6 +73,8 @@
 </template>
 
 <script>
+
+
 import PostCard from '~/components/PostCard'
 import AnswerCard from '~/components/AnswerCard'
 import { db } from '~/plugins/firebase'
@@ -170,7 +172,6 @@ export default {
       this.answer.date=fecha;
       console.log(this.answer)
       db.collection('answers').add(this.answer)
-      document.getElementById("texto").value='';
       this.getDocuments()
     },
 

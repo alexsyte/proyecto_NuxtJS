@@ -13,7 +13,7 @@
 <script>
 
     import TheHeader from '~/layouts/TheHeader'
-    import TheSideNav from '~/layouts/TheSideNav'
+
 
     export default {
 

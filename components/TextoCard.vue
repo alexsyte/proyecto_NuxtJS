@@ -3,7 +3,7 @@
     <div class="card-content">
         <div>
           <p class="texto-titulo">
-            <a v-bind:href="'../titulo' + '/' + id">{{ titulo }}</a>
+            <a v-bind:href="'/titulo' + '/' + id">{{ titulo }}</a>
           </p>
         </div>
       <div>
