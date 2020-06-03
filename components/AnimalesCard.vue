@@ -34,7 +34,7 @@
       <div>
         <p class="animal-tipo">
           Tipo del animal: 
-          <a v-bind:href="'../category' + '/' + tipo">{{ tipo }}</a>.
+          <a v-bind:href="'/category' + '/' + tipo">{{ tipo }}</a>.
         </p>
       </div>
     </div>
