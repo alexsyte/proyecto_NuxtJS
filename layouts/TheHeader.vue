@@ -1,16 +1,11 @@
 <template>
     <header>
-
+        <!--Elemento clave en mi aplicación web ya que implementa una barra superior con las diferentes secciones de la página web-->
         <div class="brand-name">
-            <nuxt-link to="/">Inicio</nuxt-link>
+            <nuxt-link class="nuxtlink" to="/">Inicio</nuxt-link>
         </div>
 
-        <div class="drawer-toggle" role="button" @click="$store.dispatch('nav/toggleSidebar')">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-
+        <!--Implemento los distintos links que vamos a disponer-->
         <div class="app-links">
             <app-links></app-links>
         </div>
@@ -33,32 +28,25 @@
         align-items: center;
         background-color: rgb(32, 32, 32);
     }
+
     .app-links{
         justify-self: end;
     }
+
     .brand-name {
         margin: 0 10px;
         font-size: 1.3rem;
     }
-    .brand-name a {
+
+    .brand-name .nuxtlink {
         text-decoration: none;
         color: white;
     }
-    .drawer-toggle .bar {
-        width: 90%;
-        height: 2px;
-        background-color: white;
+
+    .brand-name a:hover {
+        color: #b4b4b4;
     }
-    .drawer-toggle {
-        display: flex;
-        justify-self: end;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 50%;
-        width: 35px;
-        padding-right: 16px;
-        cursor: pointer;
-    }
+    
     @media (max-width: 767px) {
         header{
             padding: 0 16px;
@@ -77,8 +65,6 @@
         .app-links {
             display: block;
         }
-        .drawer-toggle {
-            display: none;
-        }
+
     }
 </style>

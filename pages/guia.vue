@@ -25,6 +25,7 @@
 <script>
 // Importamos nuestro componente creado
 import TextoCard from "~/components/TextoCard"
+
 import { db } from '~/plugins/firebase'
 
 export default {

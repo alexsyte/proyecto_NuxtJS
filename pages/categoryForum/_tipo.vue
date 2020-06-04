@@ -37,7 +37,7 @@
         </div>
         
         <button class="button is-default" style="margin-left:20px;"><a v-bind:href="'../nuevoPost' + '/' + this.$route.params.tipo">
-            Comenzar post
+          Comenzar post
         </a></button>
         
         <button class="button" @click="logOut()">
@@ -56,6 +56,7 @@
 <script>
 // Importamos nuestro componente creado
 import PostCard from "~/components/PostCard"
+
 import { db } from '~/plugins/firebase'
 import { firebase } from '~/plugins/firebase'
 

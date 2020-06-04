@@ -1,4 +1,5 @@
 
+<!--Este componente se implementa en el TheHeader.vue, aquí se nombran los distintos links que va a disponer nuestro header-->
 <template>
     <ul class="nav-list">
         <li class="nav-item"><nuxt-link to="/lista">Lista</nuxt-link></li>
@@ -27,6 +28,7 @@
     .nav-item a:active{
         color: #b4b4b4;
     }
+
     @media (max-width: 767px) {
         .nav-list {
             display: block;

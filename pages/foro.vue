@@ -1,4 +1,4 @@
-<!--Ésta página es la que contiene las 3 distintas categorías del foro y la cual solo se puede acceder tras hacer un login y un sign in-->
+<!--Ésta página es la que contiene las 3 distintas categorías del foro y la cual solo se puede acceder tras hacer un login o un sign in-->
 <template>
   <div class="bg-img">
     <audio class="musica" :src="require('@/static/intro-acnh.mp3')" controls></audio>

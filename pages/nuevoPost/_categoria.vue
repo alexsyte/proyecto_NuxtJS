@@ -83,8 +83,11 @@ export default {
         // Guardamos el usuario que ha escrito el post
         this.post.userid=firebase.auth().currentUser.email;
         var fecha=new Date();
+        
         // Le ponemos la fecha en la cual lo ha escrito
         this.post.date=fecha;
+
+        // Le asignamos un id generado por firebase
         this.key=key();
         this.post.id=this.key;
 

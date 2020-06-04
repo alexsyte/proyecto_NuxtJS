@@ -1,4 +1,5 @@
 <template>
+  <!--Componente sobre los animales que va a ser implementado en la carpeta de pages-->
   <div class="card" style="width:400px;">
     <div class="card-image">
       <figure class="image">

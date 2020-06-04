@@ -79,7 +79,7 @@ export default {
   },
 
   methods:{
-        // Este método nos permite cambiar en pantalla y modificar en nuestra base de datos si tenemos capturado un bicho o no
+        // Este método nos permite cambiar en pantalla y modificar en nuestra base de datos si tenemos capturado un animal o no
         cambiar(animal){
             if(animal.capturado=="No"){
               console.log(db.collection('lista').doc(animal.id))

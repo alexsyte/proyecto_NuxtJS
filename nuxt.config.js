@@ -43,6 +43,7 @@ export default {
   ],
   /*
   ** Build configuration
+  ** Nos sirve para poner utilizar audio en nuestra aplicación web
   */
   build: {
     extend (config, ctx) {
@@ -55,6 +56,7 @@ export default {
       })
     }
   },
+  // A la hora de generar los archivos HTML para subirlo a un servidor hosting, debemos generar correctamente las distintas rutas a las que puede acceder el usuario
   generate: {
     async routes () {
       let routesList = []
@@ -93,7 +95,7 @@ export default {
         })
         return routesList
       } catch (error) {
-        console.log("ERROR A LA HORA DE GENERAR PROYECTO: "+error)
+        console.log(error)
         return []
       }
     }

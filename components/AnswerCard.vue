@@ -1,4 +1,5 @@
 <template>
+  <!--Componente sobre las respuestas de los posts que va a ser implementado en la carpeta de pages-->
   <div class="card" style="width:1500px;">
     <div class="card-content">
       <div>

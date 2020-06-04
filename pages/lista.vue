@@ -1,13 +1,14 @@
 <!--Ésta página es la que nos trae todos los animales de la BD, tenemos un filtro a partir de un search bar, podemos buscar solamente por bichos o peces, y clickar si ese animal en concreto lo tenemos o no-->
 <template>
   <div class="bg-img">
+    <!--Gracias a audio, podemos insertar un player de música en nuestra aplicación-->
     <audio class="musica" :src="require('@/static/intro-acnh.mp3')" controls></audio>
     <div class="container">
       <section class="section">
       
         <h1 class="title is-1">Animales</h1>
           
-          <!--Vamos a añadir un buscador a nuestra página para filtrar por un animal específico-->
+        <!--Vamos a añadir un buscador a nuestra página para filtrar por un animal específico-->
         <div class="searchbar">
           Es sensible a mayúsculas y minúsculas: 
           <input type="text" v-model="search" placeholder="Busca algún animal"/>  

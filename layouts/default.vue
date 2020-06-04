@@ -1,4 +1,5 @@
 <template>
+    <!--Layout por defecto que va a tener nuestra aplicación web-->
     <div class="app-container">
 
         <TheHeader/>

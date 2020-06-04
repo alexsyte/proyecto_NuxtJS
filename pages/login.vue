@@ -53,6 +53,7 @@ export default {
   methods: {
     onLogin() {
       // Nos logueamos con el usuario que tenemos en nuestros usuarios de firebase
+      // He creado una cuenta de prueba con email profesores@info.com y contraseña usuario
       const response = firebase.auth().signInWithEmailAndPassword(this.email, this.password)
       response.then(data => {
         this.$router.push('../foro')
@@ -65,7 +66,6 @@ export default {
     signIn(){
       // Se crea una nueva cuenta para escribir en el foro, si la cuenta ya existiera muestra un mensaje de error
       const response = firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-      // He creado una cuenta de prueba con email profesores@info.com y contraseña usuario
       response.then(data => {
         // Si todo va bien, nos redigirá al foro
         this.$router.push('../foro')

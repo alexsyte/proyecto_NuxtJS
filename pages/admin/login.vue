@@ -42,12 +42,16 @@ export default {
     onLogin() {
       // Nos logueamos con el usuario que tenemos en nuestros usuarios de firebase
       // He creado una cuenta de prueba con email profesores@info.com y contraseña usuario
-      if((this.email=="profesores@info.com")&&(this.password=="usuario")){
+      if((this.email=="profesores@info.com")){
       const response = firebase.auth().signInWithEmailAndPassword(this.email, this.password)
       response.then(data => {
         // E iremos a la pantalla de admin
         this.$router.push('../admin/datos')
         console.log("Logueado con éxito.");
+      })
+      .catch((error) => {
+        alert("email y/o contraseña incorrectos")
+        console.log(error)
       })
     
     }else{
